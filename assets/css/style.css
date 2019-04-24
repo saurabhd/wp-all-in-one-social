@@ -1,0 +1,202 @@
+/*************Animation********************/
+.icon-animation {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/** Zoom Effect **/
+@keyframes icon-zoomin {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  to {
+    -webkit-transform: scale3d(1.20, 1.20, 1.20);
+    transform: scale3d(1.20, 1.20, 1.20);
+  }
+}
+.icon-zoomin:hover {
+  -webkit-animation-name: icon-zoomin;
+  animation-name: icon-zoomin;
+}
+
+/** Rotate Effect **/
+
+@keyframes icon-rotate {
+  from {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.icon-rotate:hover {
+  -webkit-animation-name: icon-rotate;
+  animation-name: icon-rotate;
+}
+
+/** Filp Effect **/
+
+@keyframes icon-fliping {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) scale3d(.95, .95, .95);
+    transform: perspective(400px) scale3d(.95, .95, .95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+
+.icon-flip:hover {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-animation-name: icon-fliping;
+  animation-name: icon-fliping;
+}
+
+.wpaios-icon-space {
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.wpaios-social_share .wpaios-share-text{
+  font-size: 16px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+/***************** Icon style******************/
+.wpaios-social-share {
+  width: 100%;
+  clear: both;
+}
+.wpaios-social-share a.wpaios-square {
+  color: #fff;
+  text-decoration: none;
+  margin: 1% 1% 1% 0;
+  padding: 5px 6px;
+  text-align: center;
+  display: inline-block;
+}
+.wpaios-social-share a.wpaios-square:hover {
+  color: #fff;
+}
+
+.wpaios-social-share a.wpaios-circle {
+  border-radius: 100%;
+  color: #fff;
+  text-decoration: none;
+  margin: 1% 1% 1% 0;
+  padding: 5px 6px;
+  text-align: center;
+  display: inline-block;
+}
+.wpaios-social-share a.wpaios-circle:hover {
+  color: #fff;
+}
+.wpaios-social-share a.wpaios-small {
+  width: 33px;
+  height: 33px;
+  font-size: 18px;
+  line-height: normal;
+}
+
+.wpaios-social-share a.wpaios-medium {
+  width:45px;
+  height:45px;
+  font-size: 25px;
+  line-height: normal;
+}
+
+.wpaios-social-share a.wpaios-small  i {
+  padding-top: 3px;
+  color: #FFF;
+}
+.wpaios-social-share a.wpaios-medium i {
+  padding-top: 5px;
+  color: #FFF;
+}
+
+.wpaios-social-share a.wpaios-medium .fa-google-plus {
+  padding-right: 7px;
+}
+.wpaios-social-share a.wpaios-small .fa-google-plus {
+  padding-right: 3px;
+}
+
+.widget a.wpaios-square, a.wpaios-circle{
+  color:#fff;
+}
+.widget a.wpaios-square:hover, a.wpaios-circle:hover{
+  color:#fff;
+}
+
+/*************** Floating Left ***********************/
+.wpaios-floating-left {
+  position: fixed;
+  top:20%;
+  left:0;
+  z-index: 999999;
+}
+.wpaios-floating-left .wpaios-social-share a{
+  display: block;
+  margin-top:5px;
+}
+
+/*************** Floating Right *******************/
+.wpaios-floating-right {
+  position: fixed;
+  top:20%;
+  right:0;
+  z-index: 999999;
+}
+.wpaios-floating-right .wpaios-social-share a{
+  display: block;
+  margin-top:5px;
+}
+
+/**************** Widget Icon Size ***********************/
+.wpaios-widget-social-small {
+  width: 25px !important;
+}
+.wpaios-widget-social-medium {
+  width: 50px !important;
+}
