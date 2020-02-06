@@ -200,3 +200,7 @@
 .wpaios-widget-social-medium {
   width: 50px !important;
 }
+/**************** Widget Social Icons ***********************/
+.widget_wpaios-link .wpaios-social-icon-wg a{
+  display: inline-block;
+}

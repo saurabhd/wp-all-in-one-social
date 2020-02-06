@@ -44,7 +44,7 @@ class WPAIOS_PublicClass {
   /**
   * Adding Social Icon Floating Left Or Right Side
   **/
-  public function wpaios_show_icon_floating() {
+  public function wpaios_show_icon_floating($content) {
     $option = get_option( WPAIOS_TEXT_DOMAIN );
     $icon_on = false;
     if( ! empty( $option['icons_posts'] ) && in_array( get_post_type(), $option['icons_posts'] ) ) {
@@ -122,11 +122,12 @@ class WPAIOS_PublicClass {
     $icon_color = explode( ',', $icon_color );
     $wpaios_color = array();
     
-    foreach ( $icon_color as $icon_color_value ) {
-      list( $wpaios_icon_name , $wpaios_color_name ) = explode( '=', $icon_color_value );
-      $wpaios_color[$wpaios_icon_name] = $wpaios_color_name;
+    if( !is_array($icon_color) && !empty($icon_color)){
+      foreach ( $icon_color as $icon_color_value ) {
+        list( $wpaios_icon_name , $wpaios_color_name ) = explode( '=', $icon_color_value );
+        $wpaios_color[$wpaios_icon_name] = $wpaios_color_name;
+      }
     }
-    
     $wpaios_color = array_combine( array_map( function( $key ) { return 'wpaios-'.$key; }, array_keys( $wpaios_color ) ), $wpaios_color );
     $wpaios_color = array_map( 'trim', $wpaios_color );
     $wpaios_icon_size = '';
@@ -158,8 +159,11 @@ class WPAIOS_PublicClass {
       if( $text_enable == '1' && !empty( $share_text ) && ( $option['icons_position'] != 'floating-left' && $option['icons_position'] != 'floating-right' ) ) {
         $wpaios_structure .= '<h3>'.$share_text.'</h3> &nbsp;';
       }
+
       foreach ( $wpaios_icon_order as $wpaios_icon_order_value ) {
-        $wpaios_icon_color = $wpaios_color[$wpaios_icon_order_value];
+        //$wpaios_icon_color = $wpaios_color[$wpaios_icon_order_value];
+        $wpaios_icon_color = $wpaios_icon_order_value;
+        
         switch ( $wpaios_icon_order_value ) {
           case 'wpaios-email':
             if( in_array( 'email', $social_icons ) ) {
